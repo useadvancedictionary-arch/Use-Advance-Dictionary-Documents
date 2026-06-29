@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy - USE Advance Dictionary</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 16px; line-height: 1.6; color: #222; }
+    h1, h2 { line-height: 1.3; }
+    code { background: #f4f4f4; padding: 2px 6px; border-radius: 4px; }
+    .muted { color: #555; }
+  </style>
+</head>
+<body>
+  <h1>Privacy Policy - USE Advance Dictionary</h1>
+  <p class="muted"><strong>Effective date:</strong> 22 May 2026 &nbsp;|&nbsp; <strong>App version:</strong> 1.0.10 and later</p>
+
+  <p>USE Advance Dictionary (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) respects your privacy. This Privacy Policy explains what information is processed when you use our application (including <strong>Android</strong>, <strong>Windows</strong>, <strong>Web</strong>, and other platforms we distribute), what stays on your device, what may be sent over the internet, and your choices.</p>
+
+  <h2>1) Summary</h2>
+  <ul>
+    <li><strong>Dictionary lookup</strong> can work using content stored on your device so you can search meanings without an internet connection, depending on your installation and available data.</li>
+    <li><strong>Online Language Translator</strong> sends the text you enter to third-party translation services over the internet to provide translations.</li>
+    <li><strong>Scan text from camera or photos</strong> uses your camera or gallery only when you choose to scan; images are used to extract text for lookup or translation.</li>
+    <li><strong>Voice-related features</strong> may use the microphone only when you use those features and grant permission.</li>
+    <li><strong>Optional online English dictionary lookup</strong> (<strong>off by default</strong>) — when you turn on <strong>Show external words</strong> in <strong>Settings → Dictionary</strong>, and a word is not in your offline dictionary, the app may send that <strong>word or phrase</strong> to a public third-party API (for example, <strong>dictionaryapi.dev</strong>) to show <strong>English-only</strong> meanings (no Sindhi/Urdu from that service).</li>
+    <li><strong>Optional multi-device sync</strong> may sync dictionary updates using either (a) a <strong>server URL you configure</strong>, or (b) when enabled in the app, <strong>Google Firebase / Cloud Firestore</strong> and <strong>Firebase Authentication</strong> (including anonymous sign-in for read-only sync), as described in Section 3.</li>
+    <li>We do not sell your personal data.</li>
+  </ul>
+
+  <h2>2) Information Stored on Your Device (Local)</h2>
+  <p>The app may store data locally on your device, for example:</p>
+  <ul>
+    <li><strong>Dictionary content and related data</strong> may be stored using on-device storage mechanisms (for example, local database or key-value storage, depending on platform) so lookup, favorites, history, and settings can work offline where supported.</li>
+    <li><strong>Your preferences and lists</strong>, such as settings, search history, favorites, or similar features implemented in the app—these are intended to stay on your device unless you share them yourself (for example via system share) or you enable optional sync to a server you configure.</li>
+    <li><strong>Administrator features</strong> (where available), such as edited dictionary entries or backups you export, are stored locally unless you use optional sync or share a file yourself.</li>
+  </ul>
+  <p>This local information is not transmitted to us merely because it exists on your device; it is processed on-device for app functionality.</p>
+
+  <h2>3) Information Sent Over the Internet</h2>
+  <h3>3.1 Online translation</h3>
+  <p>When you use <strong>Language translator</strong> (or similar online translation features), the <strong>text you type or paste</strong> is sent over the internet to <strong>independent third-party translation services</strong> to return a translation. We do not control those providers’ full privacy practices; their services are used to perform the translation you request.</p>
+  <p>Typical providers or approaches may include public translation APIs (for example, services such as MyMemory, LibreTranslate, or other engines the app may use or fall back to). If you enable optional integrations such as <strong>Sarvam AI</strong> translation, your <strong>text</strong> and <strong>API credentials you enter in the app</strong> may be sent to <strong>Sarvam</strong> (or a URL you configure) under that provider’s terms. You should assume that <strong>translation requests leave your device and are processed on third-party systems</strong> when you use this feature.</p>
+
+  <h3>3.2 Optional online English dictionary lookup (Show external words)</h3>
+  <p>Your on-device dictionary is the primary source for lookup. <strong>By default, the app does not send search terms to external dictionary services.</strong></p>
+  <p>If you enable <strong>Show external words</strong> in <strong>Settings → Dictionary</strong>, and you search for a word that is <strong>not</strong> in your offline dictionary (or you choose <strong>Look up &quot;…&quot; online</strong> in Search), the app may request a definition from a <strong>public third-party English dictionary API</strong> (for example, <a href="https://dictionaryapi.dev/" rel="noopener noreferrer">dictionaryapi.dev</a>). In that case the <strong>word or phrase you looked up</strong> is sent over the internet to that service.</p>
+  <p>If <strong>Auto-translate external meanings</strong> is enabled (default when external words are on), each <strong>English definition line</strong> may also be sent to <strong>translation services</strong> (optional <strong>Sarvam AI</strong> if you configure a key, otherwise services such as <strong>MyMemory</strong> or <strong>LibreTranslate</strong>) to produce <strong>machine-translated</strong> Sindhi and Urdu text shown on the word details screen. Those translations are <strong>approximate</strong>, are <strong>not</strong> stored in your offline dictionary unless you add entries separately, and leave your device only while you use the feature.</p>
+  <p>That third-party provider processes the request under its own terms and privacy practices. We do not control how long they retain logs or requests. You can turn this feature off at any time in Settings; when off, missing words are not looked up online through this feature.</p>
+
+  <h3>3.3 Optional multi-device sync (HTTP server you configure)</h3>
+  <p>If you use <strong>multi-device sync</strong> with a <strong>sync server base URL</strong> (and optional bearer token) that points to <strong>your own or a third-party HTTP(S) endpoint</strong>, the app may <strong>upload and download dictionary entry data</strong> (such as words and meanings you add or change) between your device and <strong>that server</strong>. That server is <strong>chosen and operated by you or your organization</strong>, not by us, unless we separately provide you with a hosted endpoint. You should only use URLs you trust and protect any secret token you configure.</p>
+
+  <h3>3.4 Optional multi-device sync (Firebase / Cloud Firestore)</h3>
+  <p>When <strong>Firebase Firestore</strong> sync is enabled in the app’s administrator sync settings, dictionary entry data (such as words, meanings, and related fields you add or change) may be <strong>stored and synchronized through Google Cloud Firestore</strong> in the Firebase project configured with the app. In that mode, <strong>Google</strong> acts as an infrastructure and cloud provider and processes that data under <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google’s Privacy Policy</a> and the <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Firebase documentation</a>, in addition to this policy.</p>
+  <p>The app may use <strong>Firebase Authentication</strong> so devices can access Firestore under your security rules: <strong>read-only devices</strong> may use <strong>anonymous authentication</strong> automatically so they can download updates without typing credentials; <strong>administrator devices</strong> that save changes may sign in with an <strong>email address and password</strong> you create in Firebase Authentication. Authentication identifiers (such as user IDs) are processed by Google as part of that service.</p>
+  <p>You can turn off Firestore sync in the app’s administrator sync settings (where offered). Turning it off stops new sync through Firebase but does not by itself delete data already stored in your Firebase project; retention there is governed by your Google account and Firebase settings.</p>
+
+  <h3>3.5 Optional remote dictionary assets (some builds)</h3>
+  <p>On some platforms or configurations, the app may download <strong>dictionary data packages</strong> or a <strong>manifest</strong> from URLs configured at build time or in settings, so the app can load or update bundled content. Such downloads are limited to operating the dictionary feature.</p>
+
+  <h3>3.6 Other network use</h3>
+  <p>The app may use the internet for other functions such as opening links you choose (for example rate/share), loading optional content, or features that require connectivity. General technical data (for example, encrypted requests) may be processed by network and infrastructure providers in the normal course of providing those services.</p>
+
+  <h2>4) Microphone (Optional)</h2>
+  <p>If you use features that require speech input (for example, speech-to-text or pronunciation-related tools), the app may request <strong>microphone</strong> permission. Audio is used to support that feature (for example, conversion to text on-device or through platform services, depending on your device and app version). You can deny or revoke microphone permission in system settings; related features may then be unavailable.</p>
+
+  <h2>5) Camera and Photos (Optional)</h2>
+  <p>If you use <strong>scan text</strong> or similar features, the app may request access to your <strong>camera</strong> and/or <strong>photo library</strong>. Images are used to <strong>extract printed text</strong> for dictionary lookup or translation. Processing may occur on your device (for example, using device or OS OCR capabilities) depending on platform and version. Access is intended <strong>only when you start a scan or choose an image</strong>, consistent with your permission choices.</p>
+
+  <h2>6) Permissions (Android Reference)</h2>
+  <p>Depending on your platform and version, the app may declare permissions such as:</p>
+  <ul>
+    <li><strong><code>INTERNET</code></strong> — for online translation, optional external dictionary lookup (when enabled), optional sync, and other network features.</li>
+    <li><strong><code>RECORD_AUDIO</code></strong> — for microphone-based features when you use them.</li>
+    <li><strong><code>CAMERA</code></strong> — for capturing images when you use scan-from-camera.</li>
+  </ul>
+  <p>Photo library access (when applicable) follows your OS permission model for picking images from gallery/albums.</p>
+
+  <h2>7) Analytics, Crash Reports, and Advertising</h2>
+  <p>We do not use this app to show <strong>personalized in-app advertising</strong> as described in this policy.</p>
+  <p>Depending on your platform and app build, <strong>Google Firebase</strong> or related <strong>Google Mobile Services</strong> components may be included (for example, where <strong>Google Services</strong> and Firebase configuration files are present in the Android build). In such cases, <strong>Google</strong> may process <strong>analytics and/or crash/diagnostic data</strong>, and—when you use <strong>Firestore-based dictionary sync</strong> as described in Section 3.4—<strong>dictionary content and authentication data</strong> associated with that feature, in accordance with <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google’s Privacy Policy</a> and Firebase documentation. If you want to limit such processing, use device and Google account settings available on your platform, and disable Firestore sync in the app if you do not want cloud dictionary synchronization through Firebase.</p>
+  <p><strong>Google Play</strong> and your device manufacturer may also collect certain technical or operational information under their own policies, independent of this app’s features.</p>
+
+  <h2>8) Data Sharing</h2>
+  <p>We do not sell your personal data. Data may be processed by <strong>third-party translation, dictionary API, analytics/crash, cloud sync, and infrastructure providers</strong> when you use features that require them (such as online translation, optional Sarvam or similar translation APIs you configure, online definition fallback, optional sync to an HTTP(S) URL you enter, optional <strong>Firebase / Firestore</strong> dictionary sync and <strong>Firebase Authentication</strong>, or platform analytics where enabled). Such sharing is limited to operating the feature or platform integration involved.</p>
+
+  <h2>9) Children’s Privacy</h2>
+  <p>The app is suitable for general audiences as a language-learning tool. We do not knowingly collect personal information from children beyond what is necessary for normal app operation as described here. If you believe we should address a specific concern, contact us.</p>
+
+  <h2>10) Account deletion and data erasure requests</h2>
+  <p>If you use <strong>Firebase Authentication</strong> in the app (for example, <strong>anonymous</strong> sign-in for dictionary sync or an <strong>email and password</strong> used by administrators), you may request review or deletion of authentication-related processing by contacting us at the email below. We will respond within a reasonable time. Data stored in the developer’s <strong>Firebase / Firestore</strong> project may be removed or adjusted where technically feasible. Data that exists only on your device may remain until you clear app storage or uninstall the app.</p>
+  <p id="account-deletion"><strong>Delete-account / data requests:</strong> email <a href="mailto:useadvancedictionary@gmail.com">useadvancedictionary@gmail.com</a> from the address associated with your admin account (if applicable) and describe your request. This section is the URL target for account and associated data deletion requests where Google Play requires a published link.</p>
+
+  <h2>11) Your Choices</h2>
+  <ul>
+    <li>You can avoid sending text for translation by not using online translator features.</li>
+    <li>You can avoid online English definition lookup by leaving <strong>Show external words</strong> <strong>off</strong> in <strong>Settings → Dictionary</strong> (default), or by using only words that exist in your offline dictionary.</li>
+    <li>You can disable multi-device sync by turning off <strong>Firebase Firestore</strong> in the app’s administrator sync settings and/or clearing the <strong>HTTP sync server URL</strong> (where offered); previously synced copies on other devices or in your Firebase project are not removed automatically by this policy.</li>
+    <li>You can disable camera, microphone, or photo access in device settings.</li>
+    <li>Where the app stores history or favorites locally, you may clear app data or use in-app controls where provided.</li>
+  </ul>
+
+  <h2>12) Security</h2>
+  <p>We rely on reasonable practices and secure transport (such as <strong>HTTPS</strong>) for connections to third-party services that support it (for example, many public translation and dictionary APIs).</p>
+  <p>If you configure <strong>optional multi-device HTTP sync</strong> with an <strong><code>http://</code></strong> server address (for example on a private network), data exchanged with that server <strong>may not be encrypted in transit</strong>; use <strong><code>https://</code></strong> when your sync server supports TLS. Traffic between the app and <strong>Firebase / Firestore</strong> for cloud sync is intended to use <strong>TLS</strong> as provided by Google’s services. No method of storage or transmission is completely secure.</p>
+
+  <h2>13) Changes to This Policy</h2>
+  <p>We may update this Privacy Policy. The current version is hosted at the policy URL below; the effective date at the top will be revised when material changes are made. The 22 May 2026 update describes the optional <strong>Show external words</strong> setting (off by default) introduced in app version <strong>1.0.10</strong>.</p>
+  <p><strong>Google Play Console:</strong> use this URL as your store privacy policy link:<br />
+  <code>https://raw.githubusercontent.com/useadvancedictionary-arch/Use-Advance-Dictionary-App/main/use_advanced_dictionary_app/docs/privacy-policy.html</code></p>
+
+  <h2>14) Contact Us</h2>
+  <ul>
+    <li><strong>Email:</strong> useadvancedictionary@gmail.com</li>
+    <li><strong>Developer / Product:</strong> USE Advance Dictionary</li>
+    <li><strong>Country:</strong> Pakistan</li>
+    <li><strong>Policy URL:</strong> <a href="https://raw.githubusercontent.com/useadvancedictionary-arch/Use-Advance-Dictionary-App/main/use_advanced_dictionary_app/docs/privacy-policy.html">This document</a></li>
+    <li><strong>Account / data deletion (Play):</strong> <a href="https://raw.githubusercontent.com/useadvancedictionary-arch/Use-Advance-Dictionary-App/main/use_advanced_dictionary_app/docs/account-deletion.html">Account and data deletion page</a></li>
+  </ul>
+</body>
+</html>
