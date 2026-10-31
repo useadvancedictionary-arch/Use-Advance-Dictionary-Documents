@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Account and data deletion for SubjectZone. SubjectZone has no accounts; this page explains how to delete all app data from Android, Windows, and web.">
+  <title>Account and Data Deletion — SubjectZone</title>
+  <style>
+    :root {
+      --primary: #059669;
+      --primary-dark: #047857;
+      --primary-soft: #ecfdf5;
+      --primary-border: #a7f3d0;
+      --danger: #dc2626;
+      --danger-bg: #fef2f2;
+      --danger-border: #fecaca;
+      --text: #1e293b;
+      --heading: #0f172a;
+      --text-muted: #64748b;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --code-bg: #f1f5f9;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background-color: var(--bg);
+      padding: 32px 16px;
+    }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--border);
+      padding: 48px;
+    }
+    @media (max-width: 640px) {
+      .container { padding: 24px; }
+      body { padding: 16px 8px; }
+    }
+    .header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--danger-bg);
+      color: #991b1b;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      margin-bottom: 12px;
+      border: 1px solid var(--danger-border);
+    }
+    h1 {
+      font-size: 2rem;
+      line-height: 1.25;
+      font-weight: 800;
+      color: var(--heading);
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    .meta { font-size: 0.95rem; color: var(--text-muted); }
+    h2 {
+      font-size: 1.35rem;
+      line-height: 1.35;
+      font-weight: 700;
+      color: var(--heading);
+      margin-top: 36px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    h2::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 1.15em;
+      background: var(--primary);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    h3 {
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: var(--heading);
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+    p { margin-bottom: 16px; }
+    ul, ol { margin-left: 24px; margin-bottom: 16px; }
+    li { margin-bottom: 8px; }
+    strong { color: var(--heading); }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.9em;
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1px 5px;
+    }
+    .notice {
+      background: var(--primary-soft);
+      border: 1px solid var(--primary-border);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 24px 0;
+    }
+    .notice h3 { color: #065f46; margin-top: 0; }
+    .notice p:last-child { margin-bottom: 0; }
+    .action-card {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 12px;
+      padding: 24px;
+      margin: 24px 0;
+    }
+    .action-card h3 { color: #1e40af; margin-top: 0; margin-bottom: 12px; font-size: 1.15rem; }
+    .step-box { display: flex; gap: 16px; margin-bottom: 14px; align-items: flex-start; }
+    .step-box:last-child { margin-bottom: 0; }
+    .step-num {
+      background: var(--primary);
+      color: #ffffff;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .step-text { flex: 1; }
+    .table-wrap { overflow-x: auto; margin: 20px 0; }
+    .data-table { width: 100%; border-collapse: collapse; min-width: 560px; }
+    .data-table th, .data-table td {
+      border: 1px solid var(--border);
+      padding: 12px 16px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .data-table th { background: var(--code-bg); font-weight: 600; color: var(--heading); }
+    .danger-box {
+      background: var(--danger-bg);
+      border-left: 4px solid var(--danger);
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+      color: #7f1d1d;
+    }
+    a { color: var(--primary-dark); text-decoration: none; font-weight: 500; }
+    a:hover { text-decoration: underline; }
+    .footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+    .footer a { font-weight: 400; }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #cbd5e1;
+        --heading: #f8fafc;
+        --text-muted: #94a3b8;
+        --bg: #070a12;
+        --card-bg: #0d1424;
+        --border: #1e293b;
+        --code-bg: #131c31;
+        --primary: #34d399;
+        --primary-dark: #34d399;
+        --primary-soft: rgba(16, 185, 129, 0.12);
+        --primary-border: rgba(16, 185, 129, 0.35);
+        --danger-bg: rgba(220, 38, 38, 0.12);
+        --danger-border: rgba(220, 38, 38, 0.35);
+      }
+      .container { box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5); }
+      .badge { color: #fca5a5; }
+      .notice h3 { color: #a7f3d0; }
+      .action-card { background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.3); }
+      .action-card h3 { color: #93c5fd; }
+      .danger-box { color: #fca5a5; }
+    }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .container { box-shadow: none; border: none; padding: 0; }
+      a { color: inherit; text-decoration: underline; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <span class="badge">Google Play Data Safety &amp; User Rights</span>
+      <h1>Account and Data Deletion — SubjectZone</h1>
+      <p class="meta"><strong>Application:</strong> SubjectZone &nbsp;|&nbsp; <strong>Package:</strong> <code>com.subjectzone.app</code> &nbsp;|&nbsp; <strong>Updated:</strong> October 31, 2026</p>
+    </div>
+
+    <div class="notice">
+      <h3>SubjectZone does not create accounts</h3>
+      <p>The App has no sign-up, login, profile, or cloud sync. No personal data is stored on our servers, so there is no account to delete and no server-side data to erase. Any information on your device is limited to the App&rsquo;s own installed files and cache, and you can remove it in seconds using the steps below.</p>
+      <p>This page is provided so that users can find deletion instructions and request confirmation, in line with Google Play&rsquo;s user data policies.</p>
+    </div>
+
+    <h2>1. Delete All App Data on Android</h2>
+    <div class="action-card">
+      <h3>Option A — Clear storage (keeps the App installed)</h3>
+      <div class="step-box">
+        <div class="step-num">1</div>
+        <div class="step-text">Open your device&rsquo;s <strong>Settings</strong>.</div>
+      </div>
+      <div class="step-box">
+        <div class="step-num">2</div>
+        <div class="step-text">Tap <strong>Apps</strong> (or <strong>Apps &amp; notifications</strong>) &rarr; <strong>SubjectZone</strong>.</div>
+      </div>
+      <div class="step-box">
+        <div class="step-num">3</div>
+        <div class="step-text">Tap <strong>Storage &amp; cache</strong> &rarr; <strong>Clear storage</strong> (or <strong>Clear data</strong>), then <strong>Clear cache</strong>.</div>
+      </div>
+      <div class="step-box">
+        <div class="step-num">4</div>
+        <div class="step-text">If you also granted microphone permission, you can withdraw it on the same screen under <strong>Permissions</strong> &rarr; <strong>Microphone</strong>.</div>
+      </div>
+    </div>
+    <div class="action-card">
+      <h3>Option B — Uninstall the App</h3>
+      <p style="margin-bottom:0">Long-press the SubjectZone icon and choose <strong>Uninstall</strong>, or use <strong>Settings &rarr; Apps &rarr; SubjectZone &rarr; Uninstall</strong>. Uninstalling removes all application files and cache from your device immediately.</p>
+    </div>
+
+    <h2>2. Delete App Data on Windows</h2>
+    <ol>
+      <li>Open <strong>Settings &rarr; Apps &rarr; Installed apps</strong> (or <strong>Apps &amp; features</strong> in Control Panel).</li>
+      <li>Find <strong>SubjectZone</strong>, choose <strong>Uninstall</strong>, and confirm.</li>
+      <li>Optionally remove any remaining folder under <code>%LOCALAPPDATA%</code> that carries the SubjectZone name.</li>
+    </ol>
+    <p>Uninstalling removes the installed program and its local cache. SubjectZone does not keep a Windows user profile, document library, or cloud backup.</p>
+
+    <h2>3. Delete App Data in the Web Edition</h2>
+    <ol>
+      <li>Open your browser&rsquo;s <strong>Site settings</strong> for the SubjectZone web address.</li>
+      <li>Choose <strong>Clear data</strong> (or <strong>Delete site data</strong>).</li>
+      <li>If you allowed microphone access for voice search, revoke it in the same panel.</li>
+    </ol>
+    <p>The web edition stores no account information. Its files and cache live in your browser and are removed by the browser&rsquo;s own site-data controls.</p>
+
+    <h2>4. Data Types and Deletion Breakdown</h2>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Data Category</th>
+            <th>Where It Lives</th>
+            <th>How It Is Deleted</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Account, profile, or login credentials</strong></td>
+            <td>Not collected — SubjectZone has no accounts.</td>
+            <td>Nothing to delete. No such record exists.</td>
+          </tr>
+          <tr>
+            <td><strong>Cloud-synced progress or bookmarks</strong></td>
+            <td>Not collected — there is no cloud sync.</td>
+            <td>Nothing to delete. No server database is operated.</td>
+          </tr>
+          <tr>
+            <td><strong>Installed application files and cache</strong></td>
+            <td>Your own device or browser.</td>
+            <td>Clear storage in device settings, clear site data, or uninstall. Instant.</td>
+          </tr>
+          <tr>
+            <td><strong>Library position and on-screen state</strong></td>
+            <td>Memory only, while the App is open.</td>
+            <td>Discarded automatically when the App closes.</td>
+          </tr>
+          <tr>
+            <td><strong>Voice-search audio / transcripts</strong></td>
+            <td>Not stored by SubjectZone; speech recognition is handled by your browser or operating system.</td>
+            <td>Nothing retained by us. Manage your provider&rsquo;s voice settings if you wish to clear its history.</td>
+          </tr>
+          <tr>
+            <td><strong>Support emails you send us</strong></td>
+            <td>Our support mailbox, only if you contact us.</td>
+            <td>Deleted when the request is handled, or on request — see Section 5.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>5. Request Confirmation or Deletion of an Email You Sent</h2>
+    <p>If you have contacted us and want your message and email address removed from our support mailbox, send a deletion request:</p>
+    <div class="action-card">
+      <h3>Email our support team</h3>
+      <div class="step-box">
+        <div class="step-num">1</div>
+        <div class="step-text">Write to <a href="mailto:useadvancedictionary@gmail.com?subject=Data%20Deletion%20Request%20-%20SubjectZone"><strong>useadvancedictionary@gmail.com</strong></a>.</div>
+      </div>
+      <div class="step-box">
+        <div class="step-num">2</div>
+        <div class="step-text">Use the subject line: <code>Data Deletion Request - SubjectZone</code>.</div>
+      </div>
+      <div class="step-box">
+        <div class="step-num">3</div>
+        <div class="step-text">Send the request from the same email address you used before, so we can locate the message. If you no longer have access to it, describe the earlier conversation and we will do our best to help.</div>
+      </div>
+    </div>
+    <p>We will acknowledge the request within <strong>7 days</strong> and delete the related email correspondence within <strong>30 days</strong>, except where a record must be kept to comply with the law. Because SubjectZone has no user accounts, there is no other record to remove.</p>
+
+    <h2>6. Processing Timeline</h2>
+    <ul>
+      <li><strong>On-device data:</strong> deleted immediately when you clear storage or uninstall.</li>
+      <li><strong>Support mailbox data:</strong> acknowledged within 7 days and deleted within 30 days of a verified request.</li>
+      <li><strong>Server-side account data:</strong> not applicable — no account or cloud database exists.</li>
+    </ul>
+
+    <div class="danger-box">
+      <strong>⚠️ Please note:</strong> Clearing storage or uninstalling is irreversible. The App keeps no backup, so any on-screen state or cached content will not be recoverable. Your textbook solutions remain available after reinstalling, because they are bundled with the App.
+    </div>
+
+    <h2>7. Related Information</h2>
+    <p>For a full description of how SubjectZone handles information, including voice features and network connections, please read our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+    <p>If you need help with any step on this page, contact:</p>
+    <p>
+      <strong>Developer Contact:</strong> Badruddin Siddiqui<br>
+      <strong>Email:</strong> <a href="mailto:useadvancedictionary@gmail.com">useadvancedictionary@gmail.com</a>
+    </p>
+
+    <div class="footer">
+      &copy; 2026 SubjectZone. Published for Google Play Store compliance.
+    </div>
+  </div>
+</body>
+</html>
